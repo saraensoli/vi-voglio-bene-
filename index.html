@@ -28,6 +28,24 @@
         }
         div {
             animation: float 3s ease-in-out infinite;
+            position: relative;
+        }
+        div::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px);
+            background-size: 20px 20px;
+            animation: sparkle 2s linear infinite;
+            pointer-events: none;
+        }
+        @keyframes sparkle {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
         }
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
